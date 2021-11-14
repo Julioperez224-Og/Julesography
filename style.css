@@ -1,0 +1,172 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: monospace;
+}
+
+header {
+  width: 100%;
+  height: 75px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 300px;
+  position: relative;
+}
+
+h1 {
+  display: block;
+}
+
+nav ul {
+  display: flex;
+}
+
+nav li {
+  list-style: none;
+  margin-right: 20px;
+}
+
+nav a {
+  font-size: 20px;
+  text-decoration: none;
+  color: black;
+  padding-bottom: 2px;
+}
+
+nav a:hover {
+  border-bottom: 1px solid black;
+  cursor: pointer;
+}
+
+.burger {
+  position: absolute;
+  right: 20px;
+  display: none;
+}
+
+.burger i {
+  font-size: 25px;
+}
+
+.banner {
+  width: 100vw;
+  height: 400px;
+  background: url("images/banner.jpeg");
+  background-size: cover;
+  background-position: 60% 60%;
+  position: relative;
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.banner:hover {
+  filter: grayscale(0);
+}
+
+.banner::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: inherit;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+}
+
+.banner h1 {
+  position: absolute;
+  font-size: 48px;
+  color: white;
+  z-index: 3;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+
+.container figure {
+  width: 400px;
+  height: max-content;
+  min-height: 500px;
+  border: 1px solid rgb(199, 199, 199);
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-items: start;
+  padding: 10px 10px;
+  flex-wrap: wrap;
+}
+
+.container figure figcaption {
+  font-size: 22px;
+  padding: 5px;
+  font-weight: bold;
+}
+
+.container figure img {
+  width: 100%;
+  height: auto;
+  align-self: flex-start;
+  filter: grayscale(1);
+  transition: filter 0.5s ease;
+}
+
+.container figure:hover img {
+  filter: grayscale(0);
+}
+
+@media (max-width: 1200px) {
+  header {
+    padding: 0;
+    justify-content: center;
+  }
+  nav {
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: white;
+    z-index: 3;
+    top: 75px;
+    display: none;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 20px;
+  }
+
+  nav li {
+    margin-bottom: 30px;
+  }
+
+  nav a {
+    font-size: 26px;
+  }
+
+  .burger {
+    width: max-content;
+    height: max-content;
+    display: block;
+    z-index: 2;
+  }
+
+  .container figure {
+    margin-top: 10px;
+  }
+}
+
+.displayNone {
+  display: none;
+}
+
+.display {
+  display: flex;
+}
+
+@media (max-width: 375px) {
+  .banner h1 {
+    font-size: 40px;
+  }
+}
